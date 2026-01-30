@@ -8,6 +8,8 @@
             <nav>
                 <router-link to="/">Home</router-link>
                 <router-link to="/about">About</router-link>
+                <router-link to="/leaderboard">Leaderboard</router-link>
+                <router-link to="/contact-us">Contact Us</router-link>
             </nav>
         </header>
         
