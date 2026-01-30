@@ -34,8 +34,6 @@
 
 <template>
     <div class="leaderBoard-summary">
-        <h2>Leaderboard Summary</h2>
-        
         <table>
             <thead>
                 <tr>
@@ -60,6 +58,7 @@
     }
     
     table{
+        width: 300px;
         margin: 0 auto;
         border-collapse: collapse;
     }

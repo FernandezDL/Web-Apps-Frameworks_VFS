@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    
+    import Footer from './Components/Footer.vue';
 </script>
 
 <template>
@@ -16,6 +16,8 @@
         <main>
             <router-view/>
         </main>
+
+        <Footer/>
     </div>
 </template>
 
@@ -26,5 +28,9 @@
         gap: 10px;
         
         margin-bottom: 20px;
+    }
+
+    main{
+        min-height: 80vh;
     }
 </style>
