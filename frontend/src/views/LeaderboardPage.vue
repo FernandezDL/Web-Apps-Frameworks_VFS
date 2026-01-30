@@ -9,7 +9,7 @@
 <!--        Widgets-->
         <Filter/>
      
-        <h2>Leaderboard Summary</h2>
+        <h2>Leaderboard</h2>
     
         <div class="secondContainer">
             <LeaderBoardSummary/>
