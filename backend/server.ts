@@ -1,13 +1,22 @@
 ﻿import express, {type Request, type Response} from 'express'
 import cors from 'cors'
+import {connectMongoDB} from './db/mongo';
+import { connectMySQL } from './db/mysql';
+import dotenv from 'dotenv'
 
 type LeaderboardItem = {
     player: string;
     score: number;
 };
 
+dotenv.config();
+const mongoURI = process.env.MONGO_URI;
+
 const app = express();
 const PORT = 3000;
+
+connectMongoDB(mongoURI);
+connectMySQL();
 
 app.use(cors());
 app.use(express.json());
