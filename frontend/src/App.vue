@@ -1,10 +1,14 @@
 <script setup lang="ts">
     import Footer from './Components/Footer.vue';
+    import { useRoute } from 'vue-router';
+
+    const route = useRoute();
+    const isLoginPage = route.path === '/';
 </script>
 
 <template>
     <div id="app">
-        <header>
+        <header v-if="!isLoginPage">
             <nav>
                 <router-link to="/">Home</router-link>
                 <router-link to="/about">About</router-link>

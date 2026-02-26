@@ -1,34 +1,22 @@
 ﻿<script setup lang="ts">
-    import CounterWidget from "@/Components/CounterWidget.vue";
-    import LeaderBoardSummary from "@/Components/LeaderBoardSummary.vue";
+    import LoginForm from "@/Components/LoginForm.vue";
 </script>
 
 <template>
-    <div class="landing-page">
-        <h1>Cool game :D</h1>
-        <p>Best game ever! B)</p>
-        
-        <div class="mainGame">
-            <p>The super duper fun game will be here, it's just being developed!</p>
-        </div>
+    <div class="login-page">
+        <h1>Welcome!</h1>
+        <p>Please log in to continue</p>
 
-<!--        Widgets-->
-        <CounterWidget />
+        <LoginForm/>
     </div>
 </template>
 
 <style scoped>
-    .landing-page {
-        text-align: center;
-        border-bottom: #f3aa79 dashed 3px;
-        
-        padding-bottom: 30px;
-    }
-
-    .mainGame{
-        margin: 20px;
-        padding: 50px;
-        border: #a83971 solid 2px;
-        border-radius: 15px;
+    .login-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
     }
 </style>
