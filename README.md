@@ -1,27 +1,41 @@
 # Web-Apps-Frameworks_VFS
 Assignments for the Web App Frameworks Class at VFS
 
-## A1 Description
-In class we started creating a web project with Vue as the main framework in which a `Landing` and a `About Us` page was created and configured for routing. In the first assigment for the _Web App Frameworks Class_ 2 new screen have to be created: 
-- Leaderboard screen
-- Contact us screen
-
-## New pages
-### Leaderboard screen
-In class we have had created a Leaderboard table which now has been moved from the `Landing page` to the `Leaderboard screen`. In addition to this, 2 more components have been created:
-- Filter component: This component allows the player to search for players by name
-- My Position component: This component allows the player to easily see their current position and how many points they have left before reaching the next position.
-
-### Contact us screen
-In this new page a form has been created, providing the necesary space to submit a message with the necesary information, which is name, email and the detail message.
+## A2 Description
+In this assignment 3 endpoints have been created:
+- Login enpoint: this endpoint takes in a username and a password and searches the database for those credentials, in case they are found the login will be permited and the page will change into the `Leaderboard page`
+- Leaderboard endpoint: this endpoint gets all the registries from the scores table, orders them based on the score and grabs the first 10 values
+- Contact us enpoint: with this enpoint, new contact data can be written in the database. The enpoint takes a name, an email and a message and stores the values in the database.
 
 ## Run the code
-The code need to be downloaded from [Github](https://github.com/FernandezDL/Web-Apps-Frameworks_VFS.git). When the code has been downloaded the user has to open 2 `cmd terminals`, one in the `frontend` folder and one in the `backend` folder.
+The code need to be downloaded from [Github](https://github.com/FernandezDL/Web-Apps-Frameworks_VFS.git).
 
-### Commands
-If it is the first time running the code it's encouraged to run the `npm install` command.
+### Env file
+This project uses a `.env` file for the local variables. For this create a file named `.env` in the `backend` folder and paste this code.
 
-Once that command has finished you can run both the frontend and backend with the `npm run dev` command. When that command has finished running in the frontend terminal will appear a link to open the project in the web.
+```code
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=spencer
+MYSQL_DB=A2
+MONGO_URI=mongodb+srv://diana:spencer@clusterdeprueba.2rkmza4.mongodb.net/A2?retryWrites=true&w=majority
+MONGO_DB=A2
+```
+
+### Run commands
+When the code has been downloaded, and the file has been set, the user has to open 2 `cmd terminals`, one in the `frontend` folder and one in the `backend` folder.
+
+In each folder, install the dependencies with the command:
+```code
+npm install
+```
+
+And then run both projects with the command:
+
+```code
+npm run dev
+```
+When that command has finished running in the frontend terminal will appear a link to open the project in the web.
 
 ## Github
 [GitHub code here](https://github.com/FernandezDL/Web-Apps-Frameworks_VFS.git)
