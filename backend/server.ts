@@ -46,8 +46,6 @@
         try {
             const collection = new MongoClient(process.env.MONGO_URI).db(process.env.MONGO_DB).collection("Users");
             const user = await collection.findOne({ username: username });  // findOne() ahora usa async/await
-
-            console.log(user);
             
             if (user && user.password === password) {
                 res.json({ success: true, message: "Login successful", user });
@@ -56,6 +54,23 @@
             }
         } catch (err) {
             console.error("Error during login:", err);
+            res.status(500).json({ message: "Internal server error", error: err.message });
+        }
+    });
+
+    app.post("/api/contact-us", async (req: Request, res: Response) => {
+        const { name, email, message } = req.body;
+
+        if (!name || !email || !message) {
+            return res.status(400).json({ message: "Name, email, and message are required" });
+        }
+
+        try{
+            const collection = new MongoClient(process.env.MONGO_URI).db(process.env.MONGO_DB).collection("Contacts");
+            await collection.insertOne({ name, email, message });
+            res.json({ success: true, message: "Message received" });
+        } catch (err) {
+            console.error("Error saving contact message:", err);
             res.status(500).json({ message: "Internal server error", error: err.message });
         }
     });

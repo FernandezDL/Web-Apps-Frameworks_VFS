@@ -3,8 +3,7 @@
     import { useRoute } from 'vue-router';
 
     const route = useRoute();
-    const isLoginPage = route.path === '/';
-    console.log("Current route path:", route.path);
+    let isLoginPage = route.path === '/';
 </script>
 
 <template>
