@@ -1,19 +1,17 @@
 ﻿<script setup lang="ts">
     import LeaderBoardSummary from "@/Components/LeaderBoardSummary.vue";
-    import MyPosition from "@/Components/MyPosition.vue";
     import Filter from "@/Components/Filter.vue";
+
 </script>
 
 <template>
     <div class="leaderboard">
-<!--        Widgets-->
         <Filter/>
      
         <h2>Leaderboard</h2>
     
         <div class="secondContainer">
             <LeaderBoardSummary/>
-            <MyPosition/>
         </div>
     </div>
 </template>

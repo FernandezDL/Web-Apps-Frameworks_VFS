@@ -8,6 +8,7 @@
     const router = useRouter()
     
     const loginUser = async () => {
+        console.log("Attempting login with username:", username.value);
         try {
             const response = await fetch(`http://localhost:3000/api/login?username=${username.value}&password=${password.value}`, {
                 method: 'GET',

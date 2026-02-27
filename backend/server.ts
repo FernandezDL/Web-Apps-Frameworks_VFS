@@ -20,7 +20,7 @@ const PORT = 3000;
 connectMongoDB(mongoURI);
 connectMySQL();
 
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 
 app.get("/api/ping", (req: Request, res: Response) => {
@@ -45,7 +45,7 @@ app.get("/api/login", async (req: Request, res: Response) => {
 
     try {
         const collection = new MongoClient(process.env.MONGO_URI).db(process.env.MONGO_DB).collection("Users");
-        const user = await collection.findOne({ username: username });  // findOne() ahora usa async/await
+        const user = await collection.findOne({ username: username });
         
         if (user && user.password === password) {
             res.json({ success: true, message: "Login successful", user });
@@ -83,7 +83,7 @@ app.get("/api/leaderboard", async (req: Request, res: Response) => {
                 console.error("Error fetching leaderboard data:", err);
                 return res.status(500).json({ message: "Internal server error", error: err.message });
             }
-            res.json(results);
+            res.json(results);        
         });
     } catch (err) {
         console.error("Error fetching leaderboard data:", err);
