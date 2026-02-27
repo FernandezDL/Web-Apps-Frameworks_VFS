@@ -2,7 +2,7 @@
     import {onMounted, ref} from "vue";
     
     type LeaderBoardItem = {
-        player: string;
+        player_name: string;
         score: number;
     }
     
@@ -11,7 +11,7 @@
     
     const fetchLeaderBoard = async () => {
         try{
-            const res = await fetch("http://localhost:3000/api/leaderboard-summary", {
+            const res = await fetch("http://localhost:3000/api/leaderboard", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in leaderBoardData" :key="index">
-                    <td>{{item.player}}</td>
+                    <td>{{item.player_name}}</td>
                     <td>{{item.score}}</td>
                 </tr>
             </tbody>
