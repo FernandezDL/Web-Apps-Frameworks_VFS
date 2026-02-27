@@ -18,8 +18,13 @@
 
             if (response.ok) {
                 const data = await response.json();
-                router.push('/leaderboard');
-                errorMessage.value = '';
+
+                if(data.success) {
+                    router.push('/leaderboard');
+                    errorMessage.value = '';
+                } else {
+                    errorMessage.value = 'Invalid username or password';
+                }
             } else {
                 errorMessage.value = 'Invalid username or password';
             }

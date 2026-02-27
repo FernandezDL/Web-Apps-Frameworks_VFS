@@ -47,10 +47,12 @@
             const collection = new MongoClient(process.env.MONGO_URI).db(process.env.MONGO_DB).collection("Users");
             const user = await collection.findOne({ username: username });  // findOne() ahora usa async/await
 
-            if (user) {
+            console.log(user);
+            
+            if (user && user.password === password) {
                 res.json({ success: true, message: "Login successful", user });
             } else {
-                res.json({ success: false, message: "User not found" });
+                res.json({ success: false, message: "User not found or invalid password" });
             }
         } catch (err) {
             console.error("Error during login:", err);

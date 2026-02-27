@@ -4,6 +4,7 @@
 
     const route = useRoute();
     const isLoginPage = route.path === '/';
+    console.log("Current route path:", route.path);
 </script>
 
 <template>
